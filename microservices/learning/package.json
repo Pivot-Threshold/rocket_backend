@@ -1,0 +1,32 @@
+{
+  "name": "learning-ms",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.mjs",
+    "build": "pkgroll"
+  },
+  "keywords": [],
+  "author": "Pivot Threshold",
+  "license": "UNLICENSED",
+  "type": "module",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "pg": "^8.16.0",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.24"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^22.15.30",
+    "morgan": "^1.10.0",
+    "pkgroll": "^2.12.2",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}

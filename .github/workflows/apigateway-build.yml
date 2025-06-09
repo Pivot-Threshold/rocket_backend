@@ -1,4 +1,4 @@
-name: Learning Microservice CI
+name: API Gateway CI
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: microservices/learning
+        working-directory: apigateway
 
     steps:
       - name: Checkout code
@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: 22.16.0
           cache: "npm"
-          cache-dependency-path: microservices/learning/package-lock.json
+          cache-dependency-path: apigateway/package-lock.json
 
       - name: Install dependencies
         run: npm ci

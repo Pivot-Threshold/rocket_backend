@@ -1,4 +1,4 @@
-name: Learning Microservice CI
+name: API Gateway CI
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: microservices/learning
+        working-directory: apigateway
 
     steps:
       - name: Checkout code

@@ -1,4 +1,4 @@
-name: Learning Microservice CI
+name: Resouces Microservice CI
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: microservices/learning
+        working-directory: microservices/resources
 
     steps:
       - name: Checkout code

@@ -1,0 +1,12 @@
+services:
+
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: ${{ secrets.LR_DB_ROOT_PASS }}
+      MARIADB_DATABASE: ${{ secrets.LR_DB_NAME }}
+      MARIADB_USER: ${{ secrets.LR_DB_USER }}
+      MARIADB_PASSWORD: ${{ secrets.LR_DB_PASS }}
+    ports:
+      - 3306:3306

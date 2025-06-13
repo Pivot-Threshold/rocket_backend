@@ -9,4 +9,4 @@ services:
       MARIADB_USER: ${{ secrets.LR_DB_USER }}
       MARIADB_PASSWORD: ${{ secrets.LR_DB_PASS }}
     ports:
-      - 3306:3306
+      - ${{ secrets.LR_DB_PORT }}:${{ secrets.LR_DB_DCKR_PORT }}

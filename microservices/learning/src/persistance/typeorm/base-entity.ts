@@ -37,5 +37,10 @@ export const BaseEntityOptions = {
     deletedAt: {
         type: Date,
         nullable: true
+    } as EntitySchemaColumnOptions,
+    state: {
+        type: Boolean,
+        nullable: false,
+        default: true
     } as EntitySchemaColumnOptions
 }

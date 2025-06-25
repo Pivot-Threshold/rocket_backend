@@ -1,7 +1,7 @@
 /**
  * NameAndDescription is a common interface for entities that have a name and description.
  */
-export interface NameAndDescription {
+export interface NameAndDescriptionContract {
     name: string;
     description: string;
 }
@@ -10,7 +10,7 @@ export interface NameAndDescription {
  * BaseEntity is a common interface for all domain entities in the system.
  * It includes common fields such as id, createdAt, updatedAt, deletedAt, and state.
  */
-export interface BaseEntity {
+export interface BaseContract {
     id: number;
     createdAt: Date;
     updatedAt: Date;

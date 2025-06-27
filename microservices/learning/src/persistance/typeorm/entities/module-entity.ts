@@ -1,5 +1,5 @@
 import { ModuleContract } from "@domain/entities/contracts/module";
-import { BaseEntityOptions, NameAndDescriptionOptions } from "@infrastructure/typeorm/base-entity";
+import { BaseEntityOptions, NameAndDescriptionOptions } from "@persistance/typeorm/base-entity";
 import { EntitySchema } from "typeorm";
 
 export const ModuleEntity = new EntitySchema<ModuleContract>({

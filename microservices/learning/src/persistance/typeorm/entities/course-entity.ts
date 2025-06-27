@@ -1,5 +1,5 @@
 import { EntitySchema } from "typeorm"
-import { BaseEntityOptions, NameAndDescriptionOptions } from "@infrastructure/typeorm/base-entity";
+import { BaseEntityOptions, NameAndDescriptionOptions } from "@persistance/typeorm/base-entity";
 import { CourseContract } from "@domain/entities/contracts/course";
 
 /**

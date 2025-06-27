@@ -11,7 +11,7 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "paths": {
-      "@infrastructure/*":["src/infrastructure/*"],
+      "@persistance/*":["src/persistance/*"],
       "@domain/*":["src/domain/*"],
       "@application/*":["src/application/*"],
       "@shared/*":["src/shared/*"],

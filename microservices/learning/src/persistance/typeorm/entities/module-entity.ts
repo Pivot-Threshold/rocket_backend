@@ -3,22 +3,23 @@ import { BaseEntityOptions, NameAndDescriptionOptions } from "@persistance/typeo
 import { EntitySchema } from "typeorm";
 
 export const ModuleEntity = new EntitySchema<ModuleContract>({
-    name: "modules",
+    name: "Module",
+    tableName: "modules",
     columns: {
         courseId: {
-            type: Number,
+            type: "int",
             nullable: false,
             foreignKey: {
                 name: "FK_Module_Course",
-                target: "courses",
+                target: "Course",
             },
         },
         startDate: {
-            type: Date,
+            type: "datetime",
             nullable: true
         },
         endDate: {
-            type: Date,
+            type: "datetime",
             nullable: true
         },
         ...BaseEntityOptions,
@@ -27,7 +28,7 @@ export const ModuleEntity = new EntitySchema<ModuleContract>({
     relations: {
         skills: {
             type: "many-to-many",
-            target: "skills",
+            target: "Skill",
             joinTable: {
                 name: "module_skills",
                 joinColumn: {

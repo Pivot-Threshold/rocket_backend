@@ -1,12 +1,10 @@
-import { UserId } from "@domain/value-objects/user-id";
 import { UserContract } from "../contracts/user";
 
 export class Teacher implements UserContract {
-    id: number;
+    userId: number;
     createdAt: Date;
     state: boolean;
-    userId: UserId;
-    name: string;
+    firstName: string;
     lastName: string;
     email: string;
     normalizedName: string;

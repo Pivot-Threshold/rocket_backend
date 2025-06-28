@@ -3,41 +3,46 @@ import { EntitySchema } from "typeorm";
 import { BaseEntityOptions } from "../base-entity";
 
 export const StudentActivityGradesEntity = new EntitySchema<StudentActivityGradeContract>({
-    name: "studentActivityGrades",
+    tableName: "studentActivityGrades",
+    name: "StudentActivityGrades",
     columns: {
         studentId: {
-            type: Number,
+            type: "int",
             nullable: false,
             foreignKey: {
                 name: "FK_StudentActivityGrades_Student",
-                target: "students",
+                target: "User",
             },
         },
         gradeId: {
-            type: Number,
+            type: "int",
             nullable: false,
             foreignKey: {
                 name: "FK_StudentActivityGrades_TypeGrade",
-                target: "typeGrades",
+                target: "TypeGrade",
             },
+        },
+        feedback: {
+            type: "text",
+            nullable: true
         },
         ...BaseEntityOptions
     },
-    relations:{
+    relations: {
         studentId: {
             type: "many-to-one",
-            target: "user",
+            target: "User",
             nullable: false
         },
         activity: {
             type: "many-to-one",
-            target: "activities",
+            target: "Activity",
             inverseSide: "activityGrades",
             nullable: false
         },
         grade: {
             type: "many-to-one",
-            target: "typeGrades",
+            target: "TypeGrade",
             inverseSide: "activityGrades",
             nullable: false
         }

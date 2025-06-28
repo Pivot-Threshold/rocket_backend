@@ -3,14 +3,15 @@ import { EntitySchema } from "typeorm";
 import { BaseEntityOptions, NameAndDescriptionOptions } from "../base-entity";
 
 export const ActivityEntity = new EntitySchema<ActivityContract>({
-    name: "activities",
+    tableName: "activities",
+    name: "Activity",
     columns: {
         startDate: {
-            type: Date,
+            type: "datetime",
             nullable: false
         },
         endDate: {
-            type: Date,
+            type: "datetime",
             nullable: false
         },
         ...BaseEntityOptions,
@@ -19,7 +20,7 @@ export const ActivityEntity = new EntitySchema<ActivityContract>({
     relations: {
         assets: {
             type: "one-to-many",
-            target: "assets",
+            target: "Asset",
             inverseSide: "activity",
             nullable: true
         }

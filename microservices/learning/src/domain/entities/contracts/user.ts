@@ -1,9 +1,8 @@
-import { UserId } from "@domain/value-objects/user-id";
 import { BaseContract } from "./base";
 
-export interface UserContract extends Omit<BaseContract, 'updatedAt' | 'deletedAt'> {
-    userId: UserId;
-    name: string;
+export interface UserContract extends Omit<BaseContract, 'updatedAt' | 'deletedAt' | 'id'> {
+    userId: number;
+    firstName: string;
     lastName: string;
     email: string;
     normalizedName: string;

@@ -7,30 +7,31 @@ import { CourseContract } from "@domain/entities/contracts/course";
  * It defines the structure of the Course table in the database.
  */
 export const CourseEntity = new EntitySchema<CourseContract>({
-    name: "courses",
+    name: "Course",
+    tableName: "courses",
     columns: {
         typeGrade: {
-            type: Number,
+            type: "int",
             nullable: false,
             foreignKey: {
                 name: "FK_Course_TypeGrade",
-                target: "typeGrades",
+                target: "TypeGrade",
             },
         },
         startDate: {
-            type: Date,
+            type: "datetime",
             nullable: true
         },
         endDate: {
-            type: Date,
+            type: "datetime",
             nullable: true
         },
         createdBy: {
-            type: Number,
+            type: "int",
             nullable: false,
             foreignKey: {
                 name: "FK_Course_CreatedBy",
-                target: "users",
+                target: "User",
             },
         },
         ...BaseEntityOptions,
@@ -39,9 +40,9 @@ export const CourseEntity = new EntitySchema<CourseContract>({
     relations: {
         modules: {
             type: "many-to-many",
-            target: "modules",
+            target: "Module",
             joinTable: {
-                name: "course_modules",
+                name: "courseModules",
                 joinColumn: {
                     name: "courseId",
                     referencedColumnName: "id"
@@ -55,7 +56,7 @@ export const CourseEntity = new EntitySchema<CourseContract>({
         },
         typeGrade: {
             type: "one-to-one",
-            target: "typeGrades",
+            target: "TypeGrade",
             joinColumn: {
                 name: "typeGradeId",
                 referencedColumnName: "id"
@@ -64,10 +65,10 @@ export const CourseEntity = new EntitySchema<CourseContract>({
         },
         createdBy: {
             type: "many-to-one",
-            target: "users",
+            target: "User",
             joinColumn: {
                 name: "createdById",
-                referencedColumnName: "id",
+                referencedColumnName: "userId",
             },
             nullable: false,
         }

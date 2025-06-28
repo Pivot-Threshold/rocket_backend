@@ -2,10 +2,11 @@ import { TypeGradeContract } from "@domain/entities/contracts/type-grade";
 import { EntitySchema } from "typeorm";
 import { BaseEntityOptions, NameAndDescriptionOptions } from "../base-entity";
 
-export const typeGradeEntity = new EntitySchema<TypeGradeContract>({
-    name: "typeGrades",
+export const TypeGradeEntity = new EntitySchema<TypeGradeContract>({
+    name: "TypeGrade",
+    tableName: "typeGrades",
     columns: {
         ...NameAndDescriptionOptions,
         ...BaseEntityOptions
     }
-})  
+})

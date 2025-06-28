@@ -2,7 +2,8 @@ import { StudentActivitySubmission } from "@domain/entities/models/student-activ
 import { EntitySchema } from "typeorm";
 
 export const studentActivitySubmission = new EntitySchema<StudentActivitySubmission>({
-    name: "student_activity_submissions",
+    name: "StudentActivitySubmissions",
+    tableName: "studentActivitySubmissions",
     columns: {
         id: {
             type: Number,
@@ -29,7 +30,7 @@ export const studentActivitySubmission = new EntitySchema<StudentActivitySubmiss
     relations: {
         student: {
             type: "one-to-one",
-            target: "users",
+            target: "User",
             joinColumn: {
                 name: "studentId",
                 referencedColumnName: "userId"
@@ -37,7 +38,7 @@ export const studentActivitySubmission = new EntitySchema<StudentActivitySubmiss
         },
         activity: {
             type: "one-to-one",
-            target: "activities",
+            target: "Activiy",
             joinColumn: {
                 name: "activityId",
                 referencedColumnName: "id"
@@ -45,9 +46,9 @@ export const studentActivitySubmission = new EntitySchema<StudentActivitySubmiss
         },
         assets: {
             type: "many-to-many",
-            target: "assets",
+            target: "Asset",
             joinTable: {
-                name: "student_activity_submission_assets",
+                name: "studentActivitySubmissionAssets",
                 joinColumn: {
                     name: "submissionId",
                     referencedColumnName: "id"

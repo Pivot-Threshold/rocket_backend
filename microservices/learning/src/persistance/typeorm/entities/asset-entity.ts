@@ -2,30 +2,31 @@ import { AssetContract } from "@domain/entities/contracts/asset";
 import { EntitySchema } from "typeorm";
 
 export const AssetEntity = new EntitySchema<AssetContract>({
-    name: "assets",
+    name: "Asset",
+    tableName: "assets",
     columns: {
         id: {
-            type: Number,
+            type: "int",
             primary: true,
             generated: true
         },
         name: {
-            type: String,
+            type: "varchar",
             nullable: false
         },
         url: {
-            type: String,
+            type: "varchar",
             nullable: false
         },
         createdAt: {
-            type: Date,
+            type: "datetime",
             default: () => "CURRENT_TIMESTAMP"
         },
     },
     relations: {
         activity: {
             type: "one-to-many",
-            target: "activities",
+            target: "Activity",
             joinColumn: {
                 name: "activityId",
                 referencedColumnName: "id"
@@ -34,9 +35,9 @@ export const AssetEntity = new EntitySchema<AssetContract>({
         },
         modules: {
             type: "many-to-many",
-            target: "modules",
+            target: "Module",
             joinTable: {
-                name: "asset_modules",
+                name: "assetModules",
                 joinColumn: {
                     name: "assetId",
                     referencedColumnName: "id"

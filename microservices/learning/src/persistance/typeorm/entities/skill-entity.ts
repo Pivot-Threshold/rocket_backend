@@ -2,8 +2,9 @@ import { EntitySchema } from "typeorm";
 import { BaseEntityOptions, NameAndDescriptionOptions } from "../base-entity";
 import { SkillContract } from "@domain/entities/contracts/skill";
 
-export const skillEntity = new EntitySchema<SkillContract>({
-    name: "skills",
+export const SkillEntity = new EntitySchema<SkillContract>({
+    name: "Skill",
+    tableName: "skills",
     columns: {
         ...BaseEntityOptions,
         ...NameAndDescriptionOptions
@@ -11,7 +12,7 @@ export const skillEntity = new EntitySchema<SkillContract>({
     relations: {
         activities: {
             type: "many-to-many",
-            target: "activities",
+            target: "Activity",
             nullable: true,
             joinTable: {
                 name: "activity_skills",

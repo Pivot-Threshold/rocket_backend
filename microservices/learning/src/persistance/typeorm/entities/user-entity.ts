@@ -13,7 +13,7 @@ export const UserEntity = new EntitySchema<UserContract>({
         createdAt: { type: "datetime", default: () => "CURRENT_TIMESTAMP" },
         state: {
             type: "enum",
-            enum: ['active', 'inactive', 'banned'],
+            enum: ['active', 'inactive'],
             default: 'active',
             nullable: false
         }

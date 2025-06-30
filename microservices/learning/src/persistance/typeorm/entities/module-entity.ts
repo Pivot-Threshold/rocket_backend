@@ -28,9 +28,9 @@ export const ModuleEntity = new EntitySchema<ModuleContract>({
     relations: {
         skills: {
             type: "many-to-many",
-            target: "Skill",
+            target: "Skill",    
             joinTable: {
-                name: "module_skills",
+                name: "moduleSkills",
                 joinColumn: {
                     name: "moduleId",
                     referencedColumnName: "id"

@@ -1,9 +1,6 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 console.log('Loading TypeORM configuration...', process.env.DB_HOST, process.env.DB_PORT, process.env.DB_USER, process.env.DB_NAME);
 
-const path = __dirname + '/persistance/typeorm/entities/*-entity.{js,ts}';
-console.log('Entities path:', path);
-
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: 'mysql',
   host: process.env.DB_HOST,
@@ -12,7 +9,7 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
   entities: [
-    path,
+    __dirname + '/persistance/typeorm/entities/*-entity.{js,ts}',
   ],
   synchronize: true,
   migrations: [

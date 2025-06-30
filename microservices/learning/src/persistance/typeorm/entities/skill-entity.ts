@@ -15,7 +15,7 @@ export const SkillEntity = new EntitySchema<SkillContract>({
             target: "Activity",
             nullable: true,
             joinTable: {
-                name: "activity_skills",
+                name: "activitySkills",
                 joinColumn: {
                     name: "activityId",
                     referencedColumnName: "id"
